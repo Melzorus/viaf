@@ -54,7 +54,7 @@
       parking: "Parking du parc thermal",
       acces: "10 min de marche",
       lien: "#",
-      difficulte: "très difficile"
+      difficulte: "difficile"
     },
     {
       nom: "Via Ferrata du Mont",
