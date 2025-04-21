@@ -49,15 +49,27 @@ h1 {
   margin-right: 8px;
 }
 
-/* Couleurs par difficulté */
-.difficulte-facile {
+/* Couleurs par difficulté (utilisées aussi pour les marqueurs dynamiques) */
+.difficulte-facile .legend-color {
   background-color: green;
 }
-.difficulte-moyen {
+
+.difficulte-moyen .legend-color {
   background-color: blue;
 }
-.difficulte-difficile {
+
+.difficulte-difficile .legend-color {
   background-color: red;
 }
-.difficulte-tresdifficile {
+
+.difficulte-trèsdifficile .legend-color,
+.difficulte-tresdifficile .legend-color {
   background-color: black;
+}
+
+/* Pour les pastilles sur la carte */
+.via-marker .legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
