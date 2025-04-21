@@ -51,7 +51,7 @@ vias.forEach(via => {
       ${via.parking}<br>
       ${via.acces}<br>
       <a href="${via.lien}" target="_blank">Détails</a><br>
-      <strong>Difficulté: ${via.difficulte}</strong>
+      <strong>Difficulté: ${via.difficulte === "facile" ? "Facile" : via.difficulte === "moyen" ? "Moyenne" : via.difficulte === "difficile" ? "Difficile" : "Très difficile"}</strong>
     `);
 });
 
@@ -66,7 +66,7 @@ legend.onAdd = function() {
   // Boucle pour afficher chaque difficulté et sa couleur correspondante
   for (let i = 0; i < difficulties.length; i++) {
     div.innerHTML +=
-      '<i style="background:' + colors[i] + '"></i> ' + difficulties[i] + '<br>';
+      '<i style="background:' + colors[i] + '"></i> ' + (difficulties[i] === 'facile' ? 'Facile' : difficulties[i] === 'moyen' ? 'Moyenne' : difficulties[i] === 'difficile' ? 'Difficile' : 'Très difficile') + '<br>';
   }
 
   return div;
