@@ -1,4 +1,4 @@
-la carte ne s'affiche plus : // Créer la carte centrée sur la région Rhône-Alpes
+// Créer la carte centrée sur la région Rhône-Alpes
 const map = L.map('map').setView([45.5, 5.5], 8);
 
 // Ajouter une couche de tuiles (OpenStreetMap)
