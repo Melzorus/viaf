@@ -18,3 +18,46 @@ h1 {
   height: 90vh;
   width: 100%;
 }
+
+/* Style pour la légende */
+.legend {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  font-size: 14px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  text-align: left;
+}
+
+/* Ligne dans la légende */
+.legend div {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+/* Pastilles de couleur */
+.legend-color {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Couleurs par difficulté */
+.difficulte-facile {
+  background-color: green;
+}
+.difficulte-moyen {
+  background-color: blue;
+}
+.difficulte-difficile {
+  background-color: red;
+}
+.difficulte-tresdifficile {
+  background-color: black;
