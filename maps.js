@@ -31,9 +31,9 @@ const vias = [
 function getMarkerColor(difficulte) {
   switch (difficulte) {
     case "facile": return "green"; // Facile -> Vert
-    case "moyen": return "yellow"; // Moyen -> Jaune
-    case "difficile": return "blue"; // Difficile -> Bleu
-    case "très difficile": return "red"; // Très difficile -> Rouge
+    case "moyen": return "blue"; // Moyen -> bleu
+    case "difficile": return "red"; // Difficile -> Rouge
+    case "très difficile": return "black"; // Très difficile -> Noir
     default: return "gray"; // Par défaut (si aucune difficulté spécifiée)
   }
 }
