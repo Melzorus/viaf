@@ -29,21 +29,28 @@ const vias = [
 
 // Fonction pour choisir la couleur selon la difficulté
 function getMarkerColor(difficulte) {
-  switch (difficulte) {
-    case "facile": return "green"; // Facile -> Vert
-    case "moyen": return "blue"; // Moyen -> bleu
-    case "difficile": return "red"; // Difficile -> Rouge
+  const d = difficulte.trim().toLowerCase();
+  switch (d) {
+    case "facile": return "green";        // Facile -> Vert
+    case "moyen": return "blue";          // Moyen -> Bleu
+    case "difficile": return "red";       // Difficile -> Rouge
     case "très difficile": return "black"; // Très difficile -> Noir
-    default: return "gray"; // Par défaut (si aucune difficulté spécifiée)
+    default: return "gray";               // Par défaut
   }
 }
 
 // Ajouter un marqueur pour chaque via ferrata et afficher un popup avec des informations
 vias.forEach(via => {
+  const diff = via.difficulte.trim().toLowerCase();
+  const diffLabel = diff === "facile" ? "Facile" :
+                    diff === "moyen" ? "Moyenne" :
+                    diff === "difficile" ? "Difficile" :
+                    "Très difficile";
+
   L.marker(via.coords, {
     icon: L.divIcon({
       className: 'via-marker',
-      html: '<div style="background-color: ' + getMarkerColor(via.difficulte) + '; width: 20px; height: 20px; border-radius: 50%;"></div>'
+      html: `<div style="background-color: ${getMarkerColor(via.difficulte)}; width: 20px; height: 20px; border-radius: 50%;"></div>`
     })
   }).addTo(map)
     .bindPopup(`
@@ -51,27 +58,27 @@ vias.forEach(via => {
       ${via.parking}<br>
       ${via.acces}<br>
       <a href="${via.lien}" target="_blank">Détails</a><br>
-      <strong>Difficulté: ${via.difficulte === "facile" ? "Facile" : via.difficulte === "moyen" ? "Moyenne" : via.difficulte === "difficile" ? "Difficile" : "Très difficile"}</strong>
+      <strong>Difficulté: ${diffLabel}</strong>
     `);
 });
 
 // Ajouter une légende en bas à droite de la carte
 const legend = L.control({ position: 'bottomright' });
 
-legend.onAdd = function() {
+legend.onAdd = function () {
   const div = L.DomUtil.create('div', 'info legend');
   const difficulties = ['facile', 'moyen', 'difficile', 'très difficile'];
   const colors = ['green', 'blue', 'red', 'black'];
+  const labels = ['Facile', 'Moyenne', 'Difficile', 'Très difficile'];
 
-  // Boucle pour afficher chaque difficulté et sa couleur correspondante
   for (let i = 0; i < difficulties.length; i++) {
-    div.innerHTML +=
-      '<i style="background:' + colors[i] + '"></i> ' + (difficulties[i] === 'facile' ? 'Facile' : difficulties[i] === 'moyen' ? 'Moyenne' : difficulties[i] === 'difficile' ? 'Difficile' : 'Très difficile') + '<br>';
+    div.innerHTML += `
+      <i style="background:${colors[i]}; width: 15px; height: 15px; display: inline-block; border-radius: 50%; margin-right: 5px;"></i> ${labels[i]}<br>
+    `;
   }
 
   return div;
 };
 
 legend.addTo(map);
-
 
