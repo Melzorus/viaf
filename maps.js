@@ -51,7 +51,7 @@ vias.forEach(via => {
       ${via.parking}<br>
       ${via.acces}<br>
       <a href="${via.lien}" target="_blank">Détails</a><br>
-      <strong>Difficulty: ${via.difficulte}</strong>
+      <strong>Difficulté: ${via.difficulte}</strong>
     `);
 });
 
