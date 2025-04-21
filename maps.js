@@ -103,7 +103,7 @@
       acces: "20 min de marche",
       lien: "#",
       difficulte: "difficile"
-    }
+    },
   ];
 
   // Fonction pour choisir la couleur selon la difficulté
