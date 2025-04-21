@@ -61,7 +61,7 @@ const legend = L.control({ position: 'bottomright' });
 legend.onAdd = function() {
   const div = L.DomUtil.create('div', 'info legend');
   const difficulties = ['facile', 'moyen', 'difficile', 'très difficile'];
-  const colors = ['green', 'yellow', 'blue', 'red'];
+  const colors = ['green', 'blue', 'red', 'black'];
 
   // Boucle pour afficher chaque difficulté et sa couleur correspondante
   for (let i = 0; i < difficulties.length; i++) {
