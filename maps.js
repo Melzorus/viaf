@@ -15,7 +15,14 @@ const vias = [
     parking: "Parking à 200m",
     acces: "10 min de marche",
     lien: "#"
-  }
+  },
+  {
+    nom: "Via Ferata Reclavier",
+    coords: [46.0796, 6.1072],
+    parking: "Parking de pomier",
+    acces: "15 min de marche",
+    lien: "#"
+  },
 ];
 
 // Ajouter un marqueur pour chaque via ferrata et afficher un popup avec des informations
