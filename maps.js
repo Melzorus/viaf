@@ -10,15 +10,8 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 // Exemple de via ferrata (tu peux en ajouter d'autres)
 const vias = [
   {
-    nom: "Via Ferrata du Diable",
-    coords: [45.775, 6.383],
-    parking: "Parking à 200m",
-    acces: "10 min de marche",
-    lien: "#"
-  },
-  {
     nom: "Via Ferata Reclavier",
-    coords: [46.0796, 6.1072],
+    coords: [46.0775, 6.1125],
     parking: "Parking de pomier",
     acces: "15 min de marche",
     lien: "#"
