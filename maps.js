@@ -23,6 +23,13 @@ const vias = [
     acces: "15 min de marche",
     lien: "#"
   },
+   {
+    nom: "Via Ferata Curalla",
+    coords: [45.9386, 6.6955],
+    parking: "Parking de pomier",
+    acces: "15 min de marche",
+    lien: "#"
+  },
 ];
 
 // Ajouter un marqueur pour chaque via ferrata et afficher un popup avec des informations
