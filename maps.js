@@ -15,15 +15,72 @@ const vias = [
     parking: "Parking de pomier",
     acces: "15 min de marche",
     lien: "#",
-    difficulte: "difficile"
+    difficulte: "moyen"
   },
   {
     nom: "Via Ferrata Curalla",
+    coords: [45.9418 , 6.6967],
+    parking: "Parking de la via curalla",
+    acces: "15 à 20 min de marche",
+    lien: "#",
+    difficulte: "moyen"
+  },
+   {
+    nom: "Via Ferrata du Parc thermal",
     coords: [45.9386, 6.6955],
-    parking: "Parking de pomier",
-    acces: "15 min de marche",
+    parking: "Parking du parc thermal",
+    acces: "10 min de marche",
+    lien: "#",
+    difficulte: "très difficile"
+  },
+    },
+   {
+    nom: "Via Ferrata du Mont",
+    coords: [46.057754 , 6.760885],
+    parking: "Parking gorges des tines",
+    acces: "10 à 15 min de marche",
+    lien: "#",
+    difficulte: "moyen"
+  },
+    {
+    nom: "Via Ferrata de la cascades des Nants",
+    coords: [46.25179, 6.53186],
+    parking: "Parking accroparc de Bellavallis",
+    acces: "5 min de marche",
     lien: "#",
     difficulte: "facile"
+  },
+  {
+    nom: "Via ferrata du saix du tour",
+    coords: [46.19166273714018, 6.778802498353414],
+    parking: "Parking Avoriaz",
+    acces: "5 min de marche",
+    lien: "#",
+    difficulte: "moyen"
+  },
+  {
+    nom: "Via Ferrata Yves Pollet-Villard",
+    coords: [45.88275, 6.45146],
+    parking: "Parking Via Ferrata et Rocher d'escalade",
+    acces: "20 min de marche",
+    lien: "#",
+    difficulte: "difficile"
+  },
+   {
+    nom: "Via Ferrata - La Roche à l'Agathe",
+    coords: [45.88479504098867, 6.322294602427055],
+    parking: "Parking avenue du vieux pont",
+    acces: "15 min de marche",
+    lien: "#",
+    difficulte: "difficile"
+  },
+  {
+    nom: "Via ferrata La Tour du Jallouvre",
+    coords: [45.98587371996527, 6.457682765406178],
+    parking: "Parking via ferrata La Tour du Jallouvre",
+    acces: "20 min de marche",
+    lien: "#",
+    difficulte: "difficile"
   },
 ];
 
