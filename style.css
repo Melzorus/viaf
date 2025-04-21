@@ -1,0 +1,20 @@
+/* Le body aura une marge nulle et une police sans-serif */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/* Style de l'en-tête h1 : fond sombre et texte clair */
+h1 {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  margin: 0;
+}
+
+/* Style pour la carte : occupe 90% de la hauteur de la fenêtre */
+#map {
+  height: 90vh;
+  width: 100%;
+}
