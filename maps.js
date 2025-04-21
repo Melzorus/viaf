@@ -1,4 +1,4 @@
-// Créer la carte centrée sur la région Rhône-Alpes (tu pourras changer plus tard)
+// Créer la carte centrée sur la région Rhône-Alpes
 const map = L.map('map').setView([45.5, 5.5], 8);
 
 // Ajouter une couche de tuiles (OpenStreetMap)
@@ -7,31 +7,70 @@ L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
   maxZoom: 19
 }).addTo(map);
 
-// Exemple de via ferrata (tu peux en ajouter d'autres)
+// Exemple de via ferrata avec difficulté
 const vias = [
   {
-    nom: "Via Ferata Reclavier",
+    nom: "Via Ferrata Reclavier",
     coords: [46.0775, 6.1125],
     parking: "Parking de pomier",
     acces: "15 min de marche",
-    lien: "#"
+    lien: "#",
+    difficulte: "difficile"
   },
-   {
-    nom: "Via Ferata Curalla",
+  {
+    nom: "Via Ferrata Curalla",
     coords: [45.9386, 6.6955],
     parking: "Parking de pomier",
     acces: "15 min de marche",
-    lien: "#"
+    lien: "#",
+    difficulte: "facile"
   },
 ];
 
+// Fonction pour choisir la couleur selon la difficulté
+function getMarkerColor(difficulte) {
+  switch (difficulte) {
+    case "facile": return "green"; // Facile -> Vert
+    case "moyen": return "yellow"; // Moyen -> Jaune
+    case "difficile": return "blue"; // Difficile -> Bleu
+    case "très difficile": return "red"; // Très difficile -> Rouge
+    default: return "gray"; // Par défaut (si aucune difficulté spécifiée)
+  }
+}
+
 // Ajouter un marqueur pour chaque via ferrata et afficher un popup avec des informations
 vias.forEach(via => {
-  L.marker(via.coords).addTo(map)
+  L.marker(via.coords, {
+    icon: L.divIcon({
+      className: 'via-marker',
+      html: '<div style="background-color: ' + getMarkerColor(via.difficulte) + '; width: 20px; height: 20px; border-radius: 50%;"></div>'
+    })
+  }).addTo(map)
     .bindPopup(`
       <strong>${via.nom}</strong><br>
       ${via.parking}<br>
       ${via.acces}<br>
-      <a href="${via.lien}" target="_blank">Détails</a>
+      <a href="${via.lien}" target="_blank">Détails</a><br>
+      <strong>Difficulty: ${via.difficulte}</strong>
     `);
 });
+
+// Ajouter une légende en bas à droite de la carte
+const legend = L.control({ position: 'bottomright' });
+
+legend.onAdd = function() {
+  const div = L.DomUtil.create('div', 'info legend');
+  const difficulties = ['facile', 'moyen', 'difficile', 'très difficile'];
+  const colors = ['green', 'yellow', 'blue', 'red'];
+
+  // Boucle pour afficher chaque difficulté et sa couleur correspondante
+  for (let i = 0; i < difficulties.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + colors[i] + '"></i> ' + difficulties[i] + '<br>';
+  }
+
+  return div;
+};
+
+legend.addTo(map);
+
